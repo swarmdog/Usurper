@@ -18,10 +18,10 @@
 
 {$IFDEF FPC}
   {$mode tp}
-  {$asmmode intel}
+//  {$asmmode intel} - ARM does not support intel
   {$PACKRECORDS 1}
   {$packset 1} // Default as of 2.5.1, but doesn't hurt to include
   {$H-}
   {$V-}
-  {$DEFINE USE32} // HELPFILE.PAS needs this to use the right ASM block
+//  {$DEFINE USE32} // HELPFILE.PAS needs this to use the right ASM block 
 {$ENDIF}
