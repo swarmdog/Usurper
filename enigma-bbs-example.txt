@@ -1,0 +1,35 @@
+Short readme on running Usurper through Enigma on Raspberry Pi B+.
+
+Place USURPER and EDITOR binaries in ~/enigma-bbs/scripts/Usurper.
+
+Run ./EDITOR to reset game and configure Usurper.  Delete NPC number 18 and number 45, otherwise maintenance will crash.
+
+Enigma BBS menu entry:
+
+        doorUsurp: {
+            desc: Usurper
+            module: abracadabra
+            config: {
+                name: Usurper
+                dropFileType: DOOR
+                cmd: ~/enigma-bbs/scripts/Usurper/multi.sh
+                args: [
+                    "{node}",
+					          "{srvPort}"
+                ],
+                nodeMax: 8
+                tooManyArt: DOORMANY
+                io: stdio
+            }
+        }
+        
+        
+Create multi.sh in ~/enigma-bbs/scripts/Usurper with the following:
+
+#!/bin/bash
+NODE=$1
+SRVPORT=$2
+
+cd ~/enigma-bbs/scripts/Usurper
+./USURPER -N$NODE -X -D~/enigma-bbs/drop/node$NODE/DOOR.SYS.
+
