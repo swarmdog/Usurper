@@ -15,7 +15,7 @@ Enigma BBS menu entry:
                 cmd: ~/enigma-bbs/scripts/Usurper/multi.sh
                 args: [
                     "{node}",
-					          "{srvPort}"
+		    "{srvPort}"
                 ],
                 nodeMax: 8
                 tooManyArt: DOORMANY
