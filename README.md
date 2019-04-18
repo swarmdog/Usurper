@@ -17,6 +17,10 @@ Binaries are compiled using Lazarus v1.6.4 w/ FPC 3.0.2<br />
 
 ==============================
 
+Please see enigma-bbs-example.txt for instructions on running Usurper on a Pi 3B or 3B+.
+
+==============================
+
 These files are part of Usurper.
 
     Usurper is free software; you can redistribute it and/or modify
