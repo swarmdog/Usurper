@@ -259,7 +259,7 @@ begin
   Result := 0;
 
   repeat
-    d(config.textcolor, 'Select # Item (' + config.textcol2 + '?' + config.textcol1 + '=list, Enter=abort)');
+    d(config.textcolor, 'Select # Item (' + config.textcol2 + '?' + config.textcol1 + '=list, Enter/q=abort)');
     sd(config.textcolor, ':');
 
     s := get_string(5);
@@ -268,7 +268,7 @@ begin
     begin
       inventory_display(player0);
     end else
-    if s <> '' then
+    if (s <> '') and (s <> 'q') then
     begin
 
       i := str_to_nr(s);
@@ -283,7 +283,7 @@ begin
       end;
     end;
 
-  until s = '';
+  until (s = '') or (s = 'q');
 
   {return result}
   item_select := Result;
@@ -373,7 +373,7 @@ begin
   repeat
     inventory_sort(player);
     crlf;
-    d(config.textcolor, 'Item # to Remove (' + config.textcol2 + '?' + config.textcol1 + '=list, Enter=abort)');
+    d(config.textcolor, 'Item # to Remove (' + config.textcol2 + '?' + config.textcol1 + '=list, Enter/q=abort)');
     sd(config.textcolor, ':');
 
     s := get_string(5);
@@ -887,7 +887,7 @@ begin
         end;
       end;
     end;
-  until s = '';
+  until (s = '') or (s = 'q');
 
   {dispose pointer var}
   dispose(objekt);

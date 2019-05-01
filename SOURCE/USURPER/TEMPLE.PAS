@@ -222,7 +222,7 @@ begin
                   begin
                     inventory_display(player);
                   end else
-                  if s = '' then
+                  if (s = '') or (s = 'q') then
                   begin
                     d(12, 'Aborted.');
                   end else

@@ -186,7 +186,7 @@ begin    {Cast_Spell *begin*}
     mon := 1;
 
   online := False;
-  if onliner.comfile <> '' then
+  if (onliner.comfile <> '') and (onliner.comfile <> 'q') then
   begin
     if f_exists(onliner.comfile) = True then
     begin

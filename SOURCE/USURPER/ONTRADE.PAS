@@ -479,7 +479,7 @@ begin
 
             repeat
               finito := False;
-              d(config.textcolor, 'Item # to Send (' + config.textcol2 + '?' + config.textcol1 + '=list, Enter=abort)');
+              d(config.textcolor, 'Item # to Send (' + config.textcol2 + '?' + config.textcol1 + '=list, Enter/q=abort)');
               sd(config.textcolor, ':');
 
               s := get_string(5);
@@ -489,7 +489,7 @@ begin
               begin
                 inventory_display(player);
               end else
-              if s = '' then
+              if (s = '') or (s = 'q') then
               begin
                 finito := True;
               end else
@@ -548,7 +548,7 @@ begin
                         repeat
                           finito := False;
                           d(config.textcolor, 'Item # to Request (' + config.textcol2 + '?' +
-                            config.textcol1 + '=list, Enter=abort)');
+                            config.textcol1 + '=list, Enter/q=abort)');
                           sd(config.textcolor, ':');
 
                           s := get_string(5);
@@ -558,7 +558,7 @@ begin
                           begin
                             inventory_display(enemy);
                           end else
-                          if s = '' then
+                          if (s = '') or (s = 'q') then
                           begin
                             finito := True;
                           end else

@@ -199,7 +199,7 @@ begin
             repeat
               inventory_sort(player);
 
-              d(config.textcolor, 'Item # to Send (' + config.textcol2 + '?' + config.textcol1 + '=list, Enter=abort)');
+              d(config.textcolor, 'Item # to Send (' + config.textcol2 + '?' + config.textcol1 + '=list, Enter/q=abort)');
               sd(config.textcolor, ':');
 
               s := get_String(5);
@@ -298,7 +298,7 @@ begin
                   end;
                 end;
               end;
-            until s = '';
+            until (s = '') or (s = 'q');
           end;
           'M': begin {send money}
             crlf;
